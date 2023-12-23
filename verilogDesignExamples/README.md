@@ -62,8 +62,6 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
    <br/>[LTSpice:](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
    <br/>[Microwind:](https://www.microwind.net/downloads)<br/><br/>
    
-   <p align="justify">To learn Verilog HDL fundamentals you are suggested to watch my youtube lecture series<p/><br/>
-https://youtube.com/playlist?list=PLxeUHjV-IBzuBtgJ1H832fSw4AaFXJCxO
-<br/><br/><b>How to contact for further queries:</b>
+   <b>How to contact for further queries:</b>
 Mobile: 9949-426-362
    ```
