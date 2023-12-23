@@ -1,8 +1,5 @@
 [Conditional compilation example](https://github.com/visionvlsi/veriloghdlBasicsToAdvanced/tree/main/verilogDesignExamples/conditional_compilation)<br/>
-[Part-a Examples](https://github.com/visionvlsi/veriloghdlBasicsToAdvanced/tree/main/verilogDesignExamples/part-a%20experiments)
-
-
-
+[Part-a Examples](https://github.com/visionvlsi/veriloghdlBasicsToAdvanced/tree/main/verilogDesignExamples/part-a%20experiments)<br/>
 #### PART-A Experiments:
 
 #### Write the Code using Verilog and simulate the following:
@@ -47,8 +44,7 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
 4. one bit comparator and four-bit magnitude comparator using one bit comparator
 5. Implement the Layout of CMOS Inverter.
 6. Implement the Layout of CMOS NAND.
-
-
+```
 #### EDA Software tools used:
 ```
 <p align="Justify">There are various EDA softwares for the same purpose. We will be using the following EDA softwares</p>
