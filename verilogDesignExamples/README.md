@@ -47,19 +47,17 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
 ```
 #### EDA Software tools used:
 
-```
 <p align="Justify">There are various EDA softwares for the same purpose. We will be using the following EDA softwares</p>
 <ol>
 <li>Part-A: Modelsim</li>
-<li>Part B: For experiments 1-4 LTSpice and For experiments 5 and 6 Microwind</li>
+<li>Part-B: For experiments 1-4 LTSpice and For experiments 5 and 6 Microwind</li>
 </ol>   
 <p align="Justify">Download links</p>
-[Modelsim:](www.intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html)
+[Modelsim:](https://intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html)
 <br/>
-[LTSpice:](www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
+[LTSpice:](https://analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
 <br/>
-[Microwind:](www.microwind.net/downloads)
+[Microwind:](https://microwind.net/downloads)
 <br/>
 <b>How to contact for further queries:</b>
 Mobile: 9949-426-362
-```
