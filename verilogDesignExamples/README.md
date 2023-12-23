@@ -53,10 +53,13 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
 <li>Part-B: For experiments 1-4 LTSpice and For experiments 5 and 6 Microwind</li>
 </ol>   
 <p align="Justify">Download links</p>
+
 [Modelsim:](https://intel.com/content/www/us/en/software-kit/750666/modelsim-intel-fpgas-standard-edition-software-version-20-1-1.html)
 <br/>
+
 [LTSpice:](https://analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html)
 <br/>
+
 [Microwind:](https://microwind.net/downloads)
 <br/>
 <b>How to contact for further queries:</b>
