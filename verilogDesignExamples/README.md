@@ -45,7 +45,7 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
 
 
 #### EDA Software tools used:
-
+```
 <p align="Justify">There are various EDA softwares for the same purpose. We will be using the following EDA softwares</p>
 <ol>
 <li>Part-A : Modelsim</li>
@@ -61,4 +61,4 @@ a) 8 bit asynchronous up-down counter b) 8 bit synchronous up-down counter
 https://youtube.com/playlist?list=PLxeUHjV-IBzuBtgJ1H832fSw4AaFXJCxO
 <br/><br/><b>How to contact for further queries:</b>
 Mobile: 9949-426-362
-   
+   ```
