@@ -281,9 +281,9 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li>User-defined primitives</li>
 <ol/>
 
-###### Let’s see what is allowed within the scope of a generate block.
+##### Let’s see what is allowed within the scope of a generate block.
 
-####### A. Data types
+<b> A. Data types </b>
 
 <ol>
 <li>integer, real</li>
@@ -292,11 +292,11 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li>event</li>
 <ol/>
 
-####### B. Function and task
+<b> B. Function and task </b>
 <b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in   
            generate block.</p> </b>
 		   
-###### Below module items/declarations are not allowed within the scope of a generate block
+<b> Below module items/declarations are not allowed within the scope of a generate block</b>
 
 <ol>
 <li> Port declarations like input, output, and inout </li>
@@ -311,7 +311,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li> Generate conditional (includes generate if-else and generate case) </li>
 <ol/>
 
-####### Generate loop
+#### Generate loop
 
 <p align="justify">The generate loop is similar to the for loop statement, but it uses genvar keyword as a loop variable.</p>
 <ol>
@@ -355,7 +355,7 @@ endmodule
 
 ```
 
-###### Generate conditional
+#### Generate conditional
 
 <p align="justify">A generate block allows conditionally instantiated using if-else-if construct and case keyword.</p>
 
