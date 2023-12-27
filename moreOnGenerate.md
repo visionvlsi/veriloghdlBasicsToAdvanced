@@ -31,8 +31,9 @@
 <li>time, realtime</li>
 <li>event</li>
 <ol/>
-
+  
 <b> B. Function and task </b>
+
 <b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in generate block.</p> </b>
 
 <b> Below module items/declarations are not allowed within the scope of a generate block</b>
