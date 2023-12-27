@@ -436,7 +436,7 @@ output S, Cout);
 generate
 case(sel)
 0: begin 
-initial $display("Full Adder is selected");
+initial $display("Half Adder is selected");
 half_adder ha(A, B, S, Cout);
 end
 1: begin 
@@ -445,6 +445,26 @@ full_adder fa(A, B, Cin, S, Cout);
 end
 endcase
 endgenerate
+endmodule
+
+```
+<b>Testbench</b>
+
+```
+module gen_TB;
+  wire S, Cout;
+  reg A, B, Cin;
+  
+  gen_if_ex #(0) gen(A, B, Cin, S, Cout);
+  
+  initial begin
+    $monitor("A = %b: B = %b, Cin = %b --> S = %b, Cout = %b", A, B, Cin, S, Cout);
+    
+    repeat(4) begin
+      A = $random; B = $random; Cin = $random;
+      #3;
+    end
+  end
 endmodule
 
 ```
