@@ -26,28 +26,28 @@ elaboration of the generate block.</p>
 ```
 // Design for a half-adder
 module ha ( input   a, b,
-            output  sum, cout);
- 
-  assign sum  = a ^ b;
-  assign cout = a & b;
+        output  sum, cout);
+
+assign sum  = a ^ b;
+assign cout = a & b;
 endmodule
 
 // A top level design that contains N instances of half adder
 module my_design 
-	#(parameter N=4) 
-		(	input [N-1:0] a, b,
-			output [N-1:0] sum, cout);
-			
-	// Declare a temporary loop variable to be used during
-	// generation and won't be available during simulation
-	genvar i;
-	
-	// Generate for loop to instantiate N times
-	generate 
-		for (i = 0; i < N; i = i + 1) begin
-          ha u0 (a[i], b[i], sum[i], cout[i]);
-		end
-	endgenerate
+#(parameter N=4) 
+    (	input [N-1:0] a, b,
+        output [N-1:0] sum, cout);
+        
+// Declare a temporary loop variable to be used during
+// generation and won't be available during simulation
+genvar i;
+
+// Generate for loop to instantiate N times
+generate 
+    for (i = 0; i < N; i = i + 1) begin
+      ha u0 (a[i], b[i], sum[i], cout[i]);
+    end
+endgenerate
 endmodule
 
 ```
@@ -59,26 +59,26 @@ When N is 2, my_design will have two instances of half adder.</p>
 
 ```
 module tb;
-	parameter N = 2;
-  reg  [N-1:0] a, b;
-  wire [N-1:0] sum, cout;
-  
-  // Instantiate top level design with N=2 so that it will have 2
-  // separate instances of half adders and both are given two separate
-  // inputs
-  my_design #(.N(N)) md( .a(a), .b(b), .sum(sum), .cout(cout));
-  
-  initial begin
-    a <= 0;
-    b <= 0;
-    
-    $monitor ("a=0x%0h b=0x%0h sum=0x%0h cout=0x%0h", a, b, sum, cout);
-    
-    #10 a <= 'h2;
-    		b <= 'h3;
-    #20 b <= 'h4;
-    #10 a <= 'h5;
-  end
+parameter N = 2;
+reg  [N-1:0] a, b;
+wire [N-1:0] sum, cout;
+
+// Instantiate top level design with N=2 so that it will have 2
+// separate instances of half adders and both are given two separate
+// inputs
+my_design #(.N(N)) md( .a(a), .b(b), .sum(sum), .cout(cout));
+
+initial begin
+a <= 0;
+b <= 0;
+
+$monitor ("a=0x%0h b=0x%0h sum=0x%0h cout=0x%0h", a, b, sum, cout);
+
+#10 a <= 'h2;
+        b <= 'h3;
+#20 b <= 'h4;
+#10 a <= 'h5;
+end
 endmodule
 
 ```
@@ -93,14 +93,14 @@ A parameter called USE_CASE is defined in the top level design module to select 
 
 // Design #1: Multiplexer design uses an "assign" statement to assign out signal 
 module mux_assign ( input a, b, sel,
-                   output out);
-  assign out = sel ? a : b;
-  
-  // The initial display statement is used so that 
-  // we know which design got instantiated from simulation
-  // logs  
-  initial
-  	$display ("mux_assign is instantiated");
+               output out);
+assign out = sel ? a : b;
+
+// The initial display statement is used so that 
+// we know which design got instantiated from simulation
+// logs  
+initial
+$display ("mux_assign is instantiated");
 endmodule
 
 ```
@@ -109,19 +109,19 @@ endmodule
 
 // Design #2: Multiplexer design uses a "case" statement to drive out signal
 module mux_case (input a, b, sel,
-                 output reg out);
-  always @ (a or b or sel) begin
-  	case (sel)
-    	0 : out = a;
-   	 	1 : out = b;
-  	endcase
-  end
-  
-  // The initial display statement is used so that 
-  // we know which design got instantiated from simulation
-  // logs
-  initial 
-    $display ("mux_case is instantiated");
+             output reg out);
+always @ (a or b or sel) begin
+case (sel)
+    0 : out = a;
+    1 : out = b;
+endcase
+end
+
+// The initial display statement is used so that 
+// we know which design got instantiated from simulation
+// logs
+initial 
+$display ("mux_case is instantiated");
 endmodule
 
 ```
@@ -130,18 +130,18 @@ endmodule
 
 // Top Level Design: Use a parameter to choose either one
 module my_design (	input a, b, sel,
-         			output out);
-  parameter USE_CASE = 0;
-  
-  // Use a "generate" block to instantiate either mux_case
-  // or mux_assign using an if else construct with generate
-  generate
-  	if (USE_CASE) 
-      mux_case mc (.a(a), .b(b), .sel(sel), .out(out));
-    else
-      mux_assign ma (.a(a), .b(b), .sel(sel), .out(out));
-  endgenerate
-    
+                output out);
+parameter USE_CASE = 0;
+
+// Use a "generate" block to instantiate either mux_case
+// or mux_assign using an if else construct with generate
+generate
+if (USE_CASE) 
+  mux_case mc (.a(a), .b(b), .sel(sel), .out(out));
+else
+  mux_assign ma (.a(a), .b(b), .sel(sel), .out(out));
+endgenerate
+
 endmodule
 
 ```
@@ -154,29 +154,29 @@ the design using case statement.</p>
 ```
 
 module tb;
-	// Declare testbench variables
-  reg a, b, sel;
-  wire out;
-  integer i;
-  
-  // Instantiate top level design and set USE_CASE parameter to 1 so that
-  // the design using case statement is instantiated
-  my_design #(.USE_CASE(1)) u0 ( .a(a), .b(b), .sel(sel), .out(out));
-  
-  initial begin
-  	// Initialize testbench variables
-  	a <= 0;
-    b <= 0;
-    sel <= 0;
-    
-    // Assign random values to DUT inputs with some delay
-    for (i = 0; i < 5; i = i + 1) begin
-      #10 a <= $random;
-      	  b <= $random;
-          sel <= $random;
-      $display ("i=%0d a=0x%0h b=0x%0h sel=0x%0h out=0x%0h", i, a, b, sel, out);
-    end
-  end
+// Declare testbench variables
+reg a, b, sel;
+wire out;
+integer i;
+
+// Instantiate top level design and set USE_CASE parameter to 1 so that
+// the design using case statement is instantiated
+my_design #(.USE_CASE(1)) u0 ( .a(a), .b(b), .sel(sel), .out(out));
+
+initial begin
+// Initialize testbench variables
+a <= 0;
+b <= 0;
+sel <= 0;
+
+// Assign random values to DUT inputs with some delay
+for (i = 0; i < 5; i = i + 1) begin
+  #10 a <= $random;
+      b <= $random;
+      sel <= $random;
+  $display ("i=%0d a=0x%0h b=0x%0h sel=0x%0h out=0x%0h", i, a, b, sel, out);
+end
+end
 endmodule
 
 ```
@@ -192,39 +192,39 @@ one of the many choices.</p>
 ```
 // Design #1: Half adder
 module ha (input a, b,
-           output reg sum, cout);
-  always @ (a or b)
-  {cout, sum} = a + b;
-  
-  initial
-    $display ("Half adder instantiation");
+       output reg sum, cout);
+always @ (a or b)
+{cout, sum} = a + b;
+
+initial
+$display ("Half adder instantiation");
 endmodule
 
 ```
 ```
 // Design #2: Full adder
 module fa (input a, b, cin,
-           output reg sum, cout);
-  always @ (a or b or cin)
-  {cout, sum} = a + b + cin;
-  
-    initial
-      $display ("Full adder instantiation");
+       output reg sum, cout);
+always @ (a or b or cin)
+{cout, sum} = a + b + cin;
+
+initial
+  $display ("Full adder instantiation");
 endmodule
 
 ```
 ```
 // Top level design: Choose between half adder and full adder
 module my_adder (input a, b, cin,
-                 output sum, cout);
-  parameter ADDER_TYPE = 1;
-  
-  generate
-    case(ADDER_TYPE)
-      0 : ha u0 (.a(a), .b(b), .sum(sum), .cout(cout));
-      1 : fa u1 (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
-    endcase
-  endgenerate
+             output sum, cout);
+parameter ADDER_TYPE = 1;
+
+generate
+case(ADDER_TYPE)
+  0 : ha u0 (.a(a), .b(b), .sum(sum), .cout(cout));
+  1 : fa u1 (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
+endcase
+endgenerate
 endmodule
 
 ```
@@ -233,25 +233,25 @@ endmodule
 
 ```
 module tb;
-  reg a, b, cin;
-  wire sum, cout;
-  
-  my_adder #(.ADDER_TYPE(0)) u0 (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
-  
-  initial begin
-    a <= 0;
-    b <= 0;
-    cin <= 0;
-    
-    $monitor("a=0x%0h b=0x%0h cin=0x%0h cout=0%0h sum=0x%0h",
-             a, b, cin, cout, sum);
-    
-    for (int i = 0; i < 5; i = i + 1) begin
-      #10 a <= $random;
-      b <= $random;
-      cin <= $random;
-    end
-  end
+reg a, b, cin;
+wire sum, cout;
+
+my_adder #(.ADDER_TYPE(0)) u0 (.a(a), .b(b), .cin(cin), .sum(sum), .cout(cout));
+
+initial begin
+a <= 0;
+b <= 0;
+cin <= 0;
+
+$monitor("a=0x%0h b=0x%0h cin=0x%0h cout=0%0h sum=0x%0h",
+         a, b, cin, cout, sum);
+
+for (int i = 0; i < 5; i = i + 1) begin
+  #10 a <= $random;
+  b <= $random;
+  cin <= $random;
+end
+end
 endmodule
 
 ```
