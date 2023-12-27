@@ -272,7 +272,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
  <p align="justify">It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been 
  written within generate and endgenerate keywords.</p>
  
-###### Types of generate instantiation
+#### Types of generate instantiation
 <ol>
 <li>Modules</li>
 <li>Verilog gate primitives</li>
@@ -281,7 +281,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li>User-defined primitives</li>
 <ol/>
 
-##### Let’s see what is allowed within the scope of a generate block.
+#### Let’s see what is allowed within the scope of a generate block.
 
 <b> A. Data types </b>
 
