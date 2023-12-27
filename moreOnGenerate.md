@@ -20,7 +20,7 @@
 <li>User-defined primitives</li>
 <ol/>
 
-<b>Let’s see what is allowed within the scope of a generate block.</b>
+<b> Let’s see what is allowed within the scope of a generate block. </b>
 
 <b> A. Data types </b>
 
@@ -35,20 +35,20 @@
 
 <b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in generate block.</p> </b>
 
-<b> Below module items/declarations are not allowed within the scope of a generate block</b>
+<b> Below module items/declarations are not allowed within the scope of a generate block. </b>
 
 <ol>
 <li> Port declarations like input, output, and inout </li>
 <li> specify blocks </li>
 <li> parameters and local parameters </li>
-<ol/>
+</ol>
 
 <b>Methods to write generate statements</b>
 
 <ol>
 <li> Generate loop </li>
 <li> Generate conditional (includes generate if-else and generate case) </li>
-<ol/>
+</ol>
 
 <b>Generate loop</b>
 
