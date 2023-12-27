@@ -324,6 +324,7 @@ It needs to be used by a generate loop. </li>
 </ol>
 
 ```
+
 // Example: Ripple Carry Adder
 
 module full_adder(
