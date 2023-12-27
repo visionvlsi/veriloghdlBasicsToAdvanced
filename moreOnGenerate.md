@@ -8,8 +8,7 @@
 <li> To generate multiple module instances or code repetition.</li>
 <li>Conditionally instantiate a block of code based on the Verilog parameter, however, the parameter is not permitted in the generate statement.</li>
 
-<ol/>
-
+</ol>
 <p align="justify"> It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been written within generate and endgenerate keywords.</p>
 
 <b> Types of generate instantiation</b>
