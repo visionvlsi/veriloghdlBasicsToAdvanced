@@ -352,9 +352,9 @@ endmodule
 
 <p align="justify">A generate block allows conditionally instantiated using if-else-if construct and case keyword.</p>
 
+<b>Example-1: generate If-else</b>
 ```
 
-//<b>Example: generate If-else</b>
 //In the below example, based on parameter sel full adder or half-adder design is instantiated. 
 //By default, parameter sel = 0 means half adder will be instantiated. 
 //But from the testbench code, parameter sel = 1 is passed to instantiate full adder. 
@@ -401,9 +401,10 @@ endmodule
 
 ```
 
+<b>Example-2: generate case</b>
+
 ```
 
-// <b>Example: generate case</b>
 // Similarly, the above example if-else generate block can alternatively use case statement as specified in the below example.
 
 module half_adder(
