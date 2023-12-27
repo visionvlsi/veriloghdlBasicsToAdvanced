@@ -145,7 +145,6 @@ endgenerate
 endmodule
 
 ```
-
 <b>Testbench</b>
 
 <p align="justify">Testbench instantiates the top level module my_design and sets the parameter USE_CASE to 1 so that it instantiates 
