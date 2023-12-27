@@ -270,7 +270,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
  <ol/>
  
  <p align="justify">It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been 
- written within generate and endgenerate keywords.</p>
+ written within generate and endgenerate keywords.</p><br/>
  
 #### Types of generate instantiation
 <ol>
@@ -279,7 +279,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li>Continuous assignments</li>
 <li>Initial and always blocks</li>
 <li>User-defined primitives</li>
-<ol/>
+<ol/><br/>
 
 #### Let’s see what is allowed within the scope of a generate block.
 
@@ -302,14 +302,14 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li> Port declarations like input, output, and inout </li>
 <li> specify blocks </li>
 <li> parameters and local parameters </li>
-<ol/>
+<ol/><br/>
 
 #### Methods to write generate statements
 
 <ol>
 <li> Generate loop </li>
 <li> Generate conditional (includes generate if-else and generate case) </li>
-<ol/>
+<ol/><br/>
 
 #### Generate loop
 
@@ -353,7 +353,7 @@ module ripple_carry_adder #(parameter SIZE = 4) (
 endmodule
 
 ```
-
+<br/>
 #### Generate conditional
 
 <p align="justify">A generate block allows conditionally instantiated using if-else-if construct and case keyword.</p>
