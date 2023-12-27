@@ -270,18 +270,18 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
  <ol/>
  
  <p align="justify">It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been 
- written within generate and endgenerate keywords.</p><br/>
+ written within generate and endgenerate keywords.</p>
  
-#### Types of generate instantiation
+<b> Types of generate instantiation</b>
 <ol>
 <li>Modules</li>
 <li>Verilog gate primitives</li>
 <li>Continuous assignments</li>
 <li>Initial and always blocks</li>
 <li>User-defined primitives</li>
-<ol/><br/>
+<ol/>
 
-#### Let’s see what is allowed within the scope of a generate block.
+<b>Let’s see what is allowed within the scope of a generate block.</b>
 
 <b> A. Data types </b>
 
@@ -302,16 +302,16 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li> Port declarations like input, output, and inout </li>
 <li> specify blocks </li>
 <li> parameters and local parameters </li>
-<ol/><br/>
+<ol/>
 
-#### Methods to write generate statements
+<b>Methods to write generate statements</b>
 
 <ol>
 <li> Generate loop </li>
 <li> Generate conditional (includes generate if-else and generate case) </li>
-<ol/><br/>
+<ol/>
 
-#### Generate loop
+<b>Generate loop</b>
 
 <p align="justify">The generate loop is similar to the for loop statement, but it uses genvar keyword as a loop variable.</p>
 <ol>
@@ -353,14 +353,14 @@ module ripple_carry_adder #(parameter SIZE = 4) (
 endmodule
 
 ```
-<br/>
-#### Generate conditional
+
+<b>Generate conditional</b>
 
 <p align="justify">A generate block allows conditionally instantiated using if-else-if construct and case keyword.</p>
 
 ```
 
-//Example: generate If-else
+//<b>Example: generate If-else</b>
 //In the below example, based on parameter sel full adder or half-adder design is instantiated. 
 //By default, parameter sel = 0 means half adder will be instantiated. 
 //But from the testbench code, parameter sel = 1 is passed to instantiate full adder. 
@@ -408,7 +408,7 @@ endmodule
 ```
 
 ```
-// Example: generate case
+// <b>Example: generate case</b>
 // Similarly, the above example if-else generate block can alternatively use case statement as specified in the below example.
 
 module half_adder(
