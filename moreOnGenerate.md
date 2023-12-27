@@ -1,8 +1,7 @@
 <b>More on Generate Blocks in Verilog</b>
 
 
-<p align="justify">The generate statement in Verilog is a very useful construct that generates synthesizable code during elaboration time 
-dynamically. The simulator provides an elaborated code of the ‘generate’ block. It provides the below facilities:</p>
+<p align="justify">The generate statement in Verilog is a very useful construct that generates synthesizable code during elaboration time dynamically. The simulator provides an elaborated code of the ‘generate’ block. It provides the below facilities:</p>
 
 <ol>
 
@@ -11,8 +10,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 
 <ol/>
 
-<p align="justify">It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been 
-written within generate and endgenerate keywords.</p>
+<p align="justify"> It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been written within generate and endgenerate keywords.</p>
 
 <b> Types of generate instantiation</b>
 <ol>
@@ -35,8 +33,7 @@ written within generate and endgenerate keywords.</p>
 <ol/>
 
 <b> B. Function and task </b>
-<b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in   
-generate block.</p> </b>
+<b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in generate block.</p> </b>
 
 <b> Below module items/declarations are not allowed within the scope of a generate block</b>
 
@@ -57,8 +54,7 @@ generate block.</p> </b>
 
 <p align="justify">The generate loop is similar to the for loop statement, but it uses genvar keyword as a loop variable.</p>
 <ol>
-<li> The genvar keyword is only used during the evaluation of generate block and does not exist during the simulation of the design. 
-It needs to be used by a generate loop. </li>
+<li> The genvar keyword is only used during the evaluation of generate block and does not exist during the simulation of the design. It needs to be used by a generate loop. </li>
 
 <li> Generate loop provides flexibility to reduce code lines by replacing repetitive statements to a single statement like for loop.</li>
 
