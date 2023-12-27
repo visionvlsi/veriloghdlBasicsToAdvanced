@@ -255,16 +255,19 @@ module tb;
 endmodule
 
 ```
-<<<<<<< HEAD
+
 
 #### More on Generate Blocks in Verilog
 
 <p align="justify">The generate statement in Verilog is a very useful construct that generates synthesizable code during elaboration time 
 dynamically. The simulator provides an elaborated code of the ‘generate’ block. It provides the below facilities:</p>
+
 <ol>
 
 <li> To generate multiple module instances or code repetition.</li>
 <li/>Conditionally instantiate a block of code based on the Verilog parameter, however, the parameter is not permitted in the generate statement.</li>
+ 
+ <ol/>
  
  <p align="justify">It basically provides control on variables, functions, tasks, and instantiation declarations. A generate block has been 
  written within generate and endgenerate keywords.</p>
@@ -281,37 +284,44 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 ###### Let’s see what is allowed within the scope of a generate block.
 
 ####### A. Data types
+
 <ol>
 <li>integer, real</li>
 <li>net, reg</li>
 <li>time, realtime<li/>
 <li>event</li>
+<ol/>
 
 ####### B. Function and task
 <b> <p align="justify"> Note: Function and task are not allowed within a generate loop, but they are allowed in   
            generate block.</p> </b>
 		   
 ###### Below module items/declarations are not allowed within the scope of a generate block
+
 <ol>
 <li> Port declarations like input, output, and inout </li>
 <li> specify blocks </li>
 <li> parameters and local parameters </li>
+<ol/>
 
 #### Methods to write generate statements
+
 <ol>
 <li> Generate loop </li>
 <li> Generate conditional (includes generate if-else and generate case) </li>
+<ol/>
 
 ####### Generate loop
 
 <p align="justify">The generate loop is similar to the for loop statement, but it uses genvar keyword as a loop variable.</p>
-
+<ol>
 <li> The genvar keyword is only used during the evaluation of generate block and does not exist during the simulation of the design. 
 It needs to be used by a generate loop. </li>
 
 <li> Generate loop provides flexibility to reduce code lines by replacing repetitive statements to a single statement like for loop.</li>
 
 <li> Similar to a for loop, generate loops also can be nested with different genvar as an index variable.</li>
+</ol>
 
 ```
 
@@ -397,6 +407,7 @@ module gen_if_ex #(parameter sel = 0)(
 endmodule
 
 ```
+
 ```
 // Example: generate case
 // Similarly, the above example if-else generate block can alternatively use case statement as specified in the below example.
@@ -442,5 +453,3 @@ module gen_if_ex #(parameter sel = 0)(
 endmodule
 
 ```
-=======
->>>>>>> dca6e6d6f2e603549653384f35e048a353487ddc
