@@ -1,3 +1,5 @@
+### Generate statements in Verilog HDL
+
 <p align="justify">A generate block allows to multiply module instances or perform conditional instantiation of any module.
 It provides the ability for the design to be built based on Verilog parameters. 
 These statements are particularly convenient when the same operation or module instance needs to be repeated multiple times or 
@@ -253,6 +255,7 @@ module tb;
 endmodule
 
 ```
+<<<<<<< HEAD
 
 #### More on Generate Blocks in Verilog
 
@@ -439,3 +442,5 @@ module gen_if_ex #(parameter sel = 0)(
 endmodule
 
 ```
+=======
+>>>>>>> dca6e6d6f2e603549653384f35e048a353487ddc
