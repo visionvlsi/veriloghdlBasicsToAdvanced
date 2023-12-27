@@ -278,7 +278,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <li>Verilog gate primitives</li>
 <li>Continuous assignments</li>
 <li>Initial and always blocks</li>
-<li>User-defined primitives<li/>
+<li>User-defined primitives</li>
 <ol/>
 
 ###### Let’s see what is allowed within the scope of a generate block.
@@ -288,7 +288,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <ol>
 <li>integer, real</li>
 <li>net, reg</li>
-<li>time, realtime<li/>
+<li>time, realtime</li>
 <li>event</li>
 <ol/>
 
