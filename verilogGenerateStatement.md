@@ -1,3 +1,5 @@
+### Generate statements in Verilog HDL
+
 <p align="justify">A generate block allows to multiply module instances or perform conditional instantiation of any module.
 It provides the ability for the design to be built based on Verilog parameters. 
 These statements are particularly convenient when the same operation or module instance needs to be repeated multiple times or 
