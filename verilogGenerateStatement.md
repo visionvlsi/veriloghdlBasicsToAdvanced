@@ -257,7 +257,7 @@ endmodule
 ```
 
 
-#### More on Generate Blocks in Verilog
+<b>More on Generate Blocks in Verilog</b>
 
 <p align="justify">The generate statement in Verilog is a very useful construct that generates synthesizable code during elaboration time 
 dynamically. The simulator provides an elaborated code of the ‘generate’ block. It provides the below facilities:</p>
