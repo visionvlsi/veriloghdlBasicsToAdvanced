@@ -26,7 +26,7 @@ elaboration of the generate block.</p>
 ```
 // Design for a half-adder
 module ha ( input   a, b,
-    output  sum, cout);
+	output  sum, cout);
 
 assign sum  = a ^ b;
 assign cout = a & b;
@@ -36,8 +36,8 @@ endmodule
 module my_design 
 #(parameter N=4) 
 (	input [N-1:0] a, b,
-    output [N-1:0] sum, cout);
-    
+	output [N-1:0] sum, cout);
+	
 // Declare a temporary loop variable to be used during
 // generation and won't be available during simulation
 genvar i;
@@ -45,7 +45,7 @@ genvar i;
 // Generate for loop to instantiate N times
 generate 
 for (i = 0; i < N; i = i + 1) begin
-  ha u0 (a[i], b[i], sum[i], cout[i]);
+ha u0 (a[i], b[i], sum[i], cout[i]);
 end
 endgenerate
 endmodule
@@ -75,7 +75,7 @@ b <= 0;
 $monitor ("a=0x%0h b=0x%0h sum=0x%0h cout=0x%0h", a, b, sum, cout);
 
 #10 a <= 'h2;
-    b <= 'h3;
+	b <= 'h3;
 #20 b <= 'h4;
 #10 a <= 'h5;
 end
@@ -93,7 +93,7 @@ A parameter called USE_CASE is defined in the top level design module to select 
 
 // Design #1: Multiplexer design uses an "assign" statement to assign out signal 
 module mux_assign ( input a, b, sel,
-           output out);
+				 output out);
 assign out = sel ? a : b;
 
 // The initial display statement is used so that 
@@ -109,7 +109,7 @@ endmodule
 
 // Design #2: Multiplexer design uses a "case" statement to drive out signal
 module mux_case (input a, b, sel,
-         output reg out);
+			 output reg out);
 always @ (a or b or sel) begin
 case (sel)
 0 : out = a;
@@ -130,7 +130,7 @@ endmodule
 
 // Top Level Design: Use a parameter to choose either one
 module my_design (	input a, b, sel,
-            output out);
+					output out);
 parameter USE_CASE = 0;
 
 // Use a "generate" block to instantiate either mux_case
@@ -171,8 +171,8 @@ sel <= 0;
 // Assign random values to DUT inputs with some delay
 for (i = 0; i < 5; i = i + 1) begin
 #10 a <= $random;
-  b <= $random;
-  sel <= $random;
+b <= $random;
+sel <= $random;
 $display ("i=%0d a=0x%0h b=0x%0h sel=0x%0h out=0x%0h", i, a, b, sel, out);
 end
 end
@@ -191,7 +191,7 @@ one of the many choices.</p>
 ```
 // Design #1: Half adder
 module ha (input a, b,
-   output reg sum, cout);
+ output reg sum, cout);
 always @ (a or b)
 {cout, sum} = a + b;
 
@@ -203,7 +203,7 @@ endmodule
 ```
 // Design #2: Full adder
 module fa (input a, b, cin,
-   output reg sum, cout);
+ output reg sum, cout);
 always @ (a or b or cin)
 {cout, sum} = a + b + cin;
 
@@ -215,7 +215,7 @@ endmodule
 ```
 // Top level design: Choose between half adder and full adder
 module my_adder (input a, b, cin,
-         output sum, cout);
+			 output sum, cout);
 parameter ADDER_TYPE = 1;
 
 generate
@@ -243,7 +243,7 @@ b <= 0;
 cin <= 0;
 
 $monitor("a=0x%0h b=0x%0h cin=0x%0h cout=0%0h sum=0x%0h",
-     a, b, cin, cout, sum);
+	 a, b, cin, cout, sum);
 
 for (int i = 0; i < 5; i = i + 1) begin
 #10 a <= $random;
