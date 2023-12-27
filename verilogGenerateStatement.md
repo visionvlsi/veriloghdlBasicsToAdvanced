@@ -265,7 +265,7 @@ dynamically. The simulator provides an elaborated code of the ‘generate’ blo
 <ol>
 
 <li> To generate multiple module instances or code repetition.</li>
-<li/>Conditionally instantiate a block of code based on the Verilog parameter, however, the parameter is not permitted in the generate statement.</li>
+<li>Conditionally instantiate a block of code based on the Verilog parameter, however, the parameter is not permitted in the generate statement.</li>
  
  <ol/>
  
@@ -324,7 +324,6 @@ It needs to be used by a generate loop. </li>
 </ol>
 
 ```
-
 // Example: Ripple Carry Adder
 
 module full_adder(
@@ -360,6 +359,7 @@ endmodule
 <p align="justify">A generate block allows conditionally instantiated using if-else-if construct and case keyword.</p>
 
 ```
+
 //Example: generate If-else
 //In the below example, based on parameter sel full adder or half-adder design is instantiated. 
 //By default, parameter sel = 0 means half adder will be instantiated. 
@@ -367,7 +367,6 @@ endmodule
 //$display cannot be used within generate block without initial block, otherwise, 
 //it throws an error '$display' is an invalid generate scope construct.
 
-```
 module half_adder(
   input a, b,
   output sum, cout
