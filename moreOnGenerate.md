@@ -18,7 +18,7 @@
 <li>Continuous assignments</li>
 <li>Initial and always blocks</li>
 <li>User-defined primitives</li>
-<ol/>
+</ol>
 
 <b> Let’s see what is allowed within the scope of a generate block. </b>
 
@@ -29,7 +29,7 @@
 <li>net, reg</li>
 <li>time, realtime</li>
 <li>event</li>
-<ol/>
+</ol>
   
 <b> B. Function and task </b>
 
